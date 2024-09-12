@@ -1,0 +1,38 @@
+# port
+server:
+  port: 8081
+spring:
+  # AOP配置
+  aop:
+    proxy-target-class: true
+    auto: true
+  # datasource
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: 123456
+    url: jdbc:mysql://101.43.186.37:3307/wind-turbine?useUnicode=true&characterEncoding=utf-8&SSL=true&serverTimezone=Asia/Shanghai
+    driverClassName: com.mysql.cj.jdbc.Driver
+  # dev-tools
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  #mvc
+  mvc:
+    pathmatch:
+      # 配置策略
+      matching-strategy: ant-path-matcher
+  #picture size config
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  #static resource location config:
+  web:
+    resources:
+      static-locations: classpath:/static
+# mybatis-plus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
